@@ -1,0 +1,28 @@
+export const companyConfig = {
+  name: "Atalanta Pumps Pvt. Ltd.",
+  shortName: "Atalanta Pumps",
+  manufacturer: "Protecto Engineering Private Limited",
+  established: 1973,
+  ceo: "Mallikarjun",
+  employees: "501–1000",
+  annualTurnover: "5–25 Cr",
+  isoCertification: "ISO 9001:2008",
+  gst: "29AABCA2134M1ZP",
+  empanelled: "ONGC",
+  location: "Bengaluru, Karnataka, India",
+  address: "Chakan, Pune, Maharashtra, India",
+  phone: "+91 XXXX XXXXXX",
+  email: "info@atalantapumps.com",
+  whatsapp: "91XXXXXXXXXX",
+  exportCountries: ["UAE", "Ethiopia", "Algeria", "Kenya"],
+  facilities: [
+    { name: "Chakan Manufacturing Unit", area: "33,500 sq ft", description: "Primary manufacturing facility featuring state-of-the-art CNC machining, assembly lines, and quality control labs for high-volume pump production." },
+    { name: "Ambethan Manufacturing Unit", area: "5,000 sq ft", description: "Specialized workshop facility focused on custom engineering, prototype development, and precision component manufacturing." },
+  ],
+  stats: [
+    { label: "Years of Experience", value: 50, suffix: "+" },
+    { label: "Employees", value: 500, suffix: "+" },
+    { label: "Export Countries", value: 4, suffix: "+" },
+    { label: "Annual Turnover (Cr)", value: 25, suffix: " Cr" },
+  ],
+};

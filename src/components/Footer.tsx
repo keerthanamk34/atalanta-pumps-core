@@ -1,37 +1,32 @@
 import { Link } from "react-router-dom";
-
-const quickLinks = [
-  { label: "About", to: "/about" },
-  { label: "Products", to: "/products" },
-  { label: "Services", to: "/services" },
-  { label: "Contact", to: "/contact" },
-];
+import { quickLinks } from "@/config/navigation.config";
+import { companyConfig } from "@/config/company.config";
 
 const Footer = () => (
-  <footer className="bg-card border-t border-border py-12 px-4">
+  <footer className="bg-primary text-primary-foreground py-12 px-4">
     <div className="container mx-auto">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
         <div>
-          <Link to="/" className="font-heading text-lg font-bold text-primary">
-            ATALANTA<span className="text-foreground"> PUMPS</span>
+          <Link to="/" className="font-heading text-lg font-bold text-accent">
+            ATALANTA<span className="text-primary-foreground"> PUMPS</span>
           </Link>
-          <p className="text-muted-foreground text-sm leading-relaxed mt-3">
-            Protecto Engineering Pvt. Ltd. — ISO 9001:2008 Certified Manufacturer of Submersible & Dewatering Pumps since 1973.
+          <p className="text-primary-foreground/70 text-sm leading-relaxed mt-3">
+            {companyConfig.manufacturer} — {companyConfig.isoCertification} Certified Manufacturer of Submersible & Dewatering Pumps since {companyConfig.established}.
           </p>
         </div>
         <div>
-          <h4 className="font-heading font-bold text-foreground mb-3">Quick Links</h4>
+          <h4 className="font-heading font-bold text-primary-foreground mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             {quickLinks.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="text-muted-foreground hover:text-primary transition-colors">{l.label}</Link>
+                <Link to={l.to} className="text-primary-foreground/70 hover:text-accent transition-colors">{l.label}</Link>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="font-heading font-bold text-foreground mb-3">Products</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <h4 className="font-heading font-bold text-primary-foreground mb-3">Products</h4>
+          <ul className="space-y-2 text-sm text-primary-foreground/70">
             <li>Dewatering Pumps</li>
             <li>Submersible Pumps</li>
             <li>Mining Pumps</li>
@@ -39,17 +34,17 @@ const Footer = () => (
           </ul>
         </div>
         <div>
-          <h4 className="font-heading font-bold text-foreground mb-3">Certifications</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>ISO 9001:2008</li>
+          <h4 className="font-heading font-bold text-primary-foreground mb-3">Certifications</h4>
+          <ul className="space-y-2 text-sm text-primary-foreground/70">
+            <li>{companyConfig.isoCertification}</li>
             <li>ONGC Empanelled</li>
             <li>ISO 9906/2 Testing</li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-border pt-6 text-center">
-        <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} Atalanta Pumps Pvt. Ltd. All rights reserved.
+      <div className="border-t border-primary-foreground/20 pt-6 text-center">
+        <p className="text-primary-foreground/60 text-sm">
+          © {new Date().getFullYear()} {companyConfig.name} All rights reserved. | GST: {companyConfig.gst}
         </p>
       </div>
     </div>

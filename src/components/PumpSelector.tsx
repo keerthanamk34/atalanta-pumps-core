@@ -18,7 +18,7 @@ const PumpSelector = () => {
   };
 
   return (
-    <section id="pump-selector" className="section-padding bg-background">
+    <section id="pump-selector" className="section-padding bg-secondary">
       <div className="container mx-auto max-w-2xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
@@ -29,7 +29,7 @@ const PumpSelector = () => {
           </p>
         </div>
 
-        <div className="bg-card border border-border rounded p-8">
+        <div className="bg-background border border-border rounded-lg p-8 shadow-md">
           <div className="flex items-center gap-3 mb-6">
             <Calculator className="w-6 h-6 text-primary" />
             <h3 className="font-heading text-xl font-bold text-foreground">Pump Calculator</h3>
@@ -43,7 +43,7 @@ const PumpSelector = () => {
                 value={flowRate}
                 onChange={(e) => setFlowRate(e.target.value)}
                 placeholder="e.g. 50"
-                className="w-full bg-muted text-foreground border border-border rounded px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full bg-card text-foreground border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
             <div>
@@ -53,20 +53,20 @@ const PumpSelector = () => {
                 value={head}
                 onChange={(e) => setHead(e.target.value)}
                 placeholder="e.g. 75"
-                className="w-full bg-muted text-foreground border border-border rounded px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full bg-card text-foreground border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
           </div>
 
           <button
             onClick={calculate}
-            className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:bg-orange-dark transition-colors"
+            className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-industrial-dark transition-colors shadow-md"
           >
             Get Recommendation
           </button>
 
           {result && (
-            <div className="mt-6 p-4 bg-primary/10 border border-primary/30 rounded">
+            <div className="mt-6 p-4 bg-accent/10 border border-accent/30 rounded-lg">
               <p className="text-foreground text-sm font-medium">{result}</p>
             </div>
           )}

@@ -1,21 +1,9 @@
 import AnimatedSection from "./AnimatedSection";
 import facilityChakan from "@/assets/facility-chakan.jpg";
 import facilityAmbethan from "@/assets/facility-ambethan.jpg";
+import { companyConfig } from "@/config/company.config";
 
-const facilities = [
-  {
-    name: "Chakan Manufacturing Unit",
-    area: "33,500 sq ft",
-    image: facilityChakan,
-    desc: "Our primary manufacturing facility featuring state-of-the-art CNC machining, assembly lines, and quality control labs for high-volume pump production.",
-  },
-  {
-    name: "Ambethan Manufacturing Unit",
-    area: "5,000 sq ft",
-    image: facilityAmbethan,
-    desc: "Specialized workshop facility focused on custom engineering, prototype development, and precision component manufacturing.",
-  },
-];
+const facilityImages = [facilityChakan, facilityAmbethan];
 
 const ManufacturingSection = () => (
   <section className="section-padding bg-secondary">
@@ -31,18 +19,18 @@ const ManufacturingSection = () => (
         </div>
       </AnimatedSection>
       <div className="grid md:grid-cols-2 gap-8">
-        {facilities.map((f, i) => (
+        {companyConfig.facilities.map((f, i) => (
           <AnimatedSection key={f.name} delay={i * 0.15}>
-            <div className="bg-card border border-border rounded overflow-hidden">
+            <div className="bg-background border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <div className="h-56 overflow-hidden">
-                <img src={f.image} alt={f.name} className="w-full h-full object-cover" loading="lazy" />
+                <img src={facilityImages[i]} alt={f.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-heading text-xl font-bold text-foreground">{f.name}</h3>
-                  <span className="text-xs bg-primary/20 text-primary px-3 py-1 rounded font-semibold">{f.area}</span>
+                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold">{f.area}</span>
                 </div>
-                <p className="text-muted-foreground text-sm">{f.desc}</p>
+                <p className="text-muted-foreground text-sm">{f.description}</p>
               </div>
             </div>
           </AnimatedSection>

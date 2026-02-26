@@ -19,8 +19,8 @@ const QualitySection = () => (
       </AnimatedSection>
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <AnimatedSection>
-          <div className="rounded overflow-hidden">
-            <img src={testingLab} alt="ISO 9906/2 Testing Laboratory" className="w-full h-80 object-cover rounded" loading="lazy" />
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <img src={testingLab} alt="ISO 9906/2 Testing Laboratory" className="w-full h-80 object-cover" loading="lazy" />
           </div>
         </AnimatedSection>
         <AnimatedSection delay={0.2}>

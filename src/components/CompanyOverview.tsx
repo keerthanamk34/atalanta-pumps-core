@@ -1,19 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Shield, Award, Globe, Users } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
-
-const stats = [
-  { label: "Years of Experience", value: 50, suffix: "+" },
-  { label: "Employees", value: 500, suffix: "+" },
-  { label: "Export Countries", value: 4, suffix: "+" },
-  { label: "Annual Turnover (Cr)", value: 25, suffix: " Cr" },
-];
+import { companyConfig } from "@/config/company.config";
 
 const highlights = [
   { icon: Shield, title: "ISO 9001:2008", desc: "Certified quality management system" },
   { icon: Award, title: "ONGC Empanelled", desc: "Approved vendor for India's largest oil company" },
-  { icon: Globe, title: "Global Exports", desc: "UAE, Ethiopia, Algeria, Kenya" },
-  { icon: Users, title: "501–1000 Employees", desc: "Skilled engineering workforce" },
+  { icon: Globe, title: "Global Exports", desc: companyConfig.exportCountries.join(", ") },
+  { icon: Users, title: `${companyConfig.employees} Employees`, desc: "Skilled engineering workforce" },
 ];
 
 function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
@@ -62,14 +56,14 @@ const CompanyOverview = () => (
             Company <span className="text-primary">Overview</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Protecto Engineering Private Limited — Established 1973, led by CEO Mallikarjun.
+            {companyConfig.manufacturer} — Established {companyConfig.established}, led by CEO {companyConfig.ceo}.
             A trusted name in submersible and dewatering pump manufacturing.
           </p>
         </div>
       </AnimatedSection>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-        {stats.map((s) => (
+        {companyConfig.stats.map((s) => (
           <div key={s.label} className="text-center">
             <AnimatedCounter target={s.value} suffix={s.suffix} />
             <p className="text-muted-foreground text-sm mt-2">{s.label}</p>
@@ -80,7 +74,7 @@ const CompanyOverview = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {highlights.map((h, i) => (
           <AnimatedSection key={h.title} delay={i * 0.1}>
-            <div className="bg-card p-6 rounded border border-border hover:border-primary/50 transition-colors">
+            <div className="bg-background p-6 rounded-lg border border-border hover:border-primary/40 hover:shadow-md transition-all duration-300">
               <h.icon className="w-10 h-10 text-primary mb-4" />
               <h3 className="font-heading text-lg font-bold text-foreground mb-1">{h.title}</h3>
               <p className="text-muted-foreground text-sm">{h.desc}</p>

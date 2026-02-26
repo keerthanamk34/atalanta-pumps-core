@@ -4,14 +4,15 @@ import CompanyOverview from "@/components/CompanyOverview";
 import IndustriesSection from "@/components/IndustriesSection";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Shield, Award, Globe, Users, Factory, Calendar } from "lucide-react";
+import { companyConfig } from "@/config/company.config";
 
 const aboutDetails = [
-  { icon: Calendar, title: "Established 1973", desc: "Over 50 years of engineering excellence in pump manufacturing." },
-  { icon: Factory, title: "Manufacturer", desc: "Protecto Engineering Private Limited — a trusted name in heavy engineering." },
-  { icon: Shield, title: "ISO 9001:2008", desc: "Certified quality management system ensuring world-class standards." },
+  { icon: Calendar, title: `Established ${companyConfig.established}`, desc: "Over 50 years of engineering excellence in pump manufacturing." },
+  { icon: Factory, title: "Manufacturer", desc: `${companyConfig.manufacturer} — a trusted name in heavy engineering.` },
+  { icon: Shield, title: companyConfig.isoCertification, desc: "Certified quality management system ensuring world-class standards." },
   { icon: Award, title: "ONGC Empanelled", desc: "Approved vendor for India's largest oil and natural gas corporation." },
-  { icon: Globe, title: "Global Exports", desc: "Serving clients across UAE, Ethiopia, Algeria, and Kenya." },
-  { icon: Users, title: "CEO: Mallikarjun", desc: "Visionary leadership driving innovation in pump technology." },
+  { icon: Globe, title: "Global Exports", desc: `Serving clients across ${companyConfig.exportCountries.join(", ")}.` },
+  { icon: Users, title: `CEO: ${companyConfig.ceo}`, desc: "Visionary leadership driving innovation in pump technology." },
 ];
 
 const About = () => (
@@ -35,7 +36,7 @@ const About = () => (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {aboutDetails.map((item, i) => (
             <AnimatedSection key={item.title} delay={i * 0.1}>
-              <div className="bg-card border border-border rounded p-6 h-full hover:border-primary/50 transition-colors">
+              <div className="bg-card border border-border rounded-lg p-6 h-full hover:border-primary/40 hover:shadow-md transition-all duration-300">
                 <item.icon className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-heading text-lg font-bold text-foreground mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>

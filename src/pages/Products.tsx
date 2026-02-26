@@ -32,9 +32,7 @@ const headRanges = [
 
 function matchRange(value: number, range: string): boolean {
   if (range === "all") return true;
-  if (range.endsWith("+")) {
-    return value >= parseInt(range);
-  }
+  if (range.endsWith("+")) return value >= parseInt(range);
   const [min, max] = range.split("-").map(Number);
   return value >= min && value <= max;
 }
@@ -87,7 +85,7 @@ const Products = () => {
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <Link
                 to="/products"
-                className={`px-4 py-2 rounded text-sm font-semibold transition-colors ${!category ? "bg-primary text-primary-foreground" : "bg-card border border-border text-muted-foreground hover:text-primary"}`}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${!category ? "bg-primary text-primary-foreground shadow-md" : "bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40"}`}
               >
                 All Products
               </Link>
@@ -95,7 +93,7 @@ const Products = () => {
                 <Link
                   key={c.slug}
                   to={`/products/${c.slug}`}
-                  className={`px-4 py-2 rounded text-sm font-semibold transition-colors ${category === c.slug ? "bg-primary text-primary-foreground" : "bg-card border border-border text-muted-foreground hover:text-primary"}`}
+                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${category === c.slug ? "bg-primary text-primary-foreground shadow-md" : "bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40"}`}
                 >
                   {c.label}
                 </Link>
@@ -108,19 +106,19 @@ const Products = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-10 justify-center flex-wrap">
               <div>
                 <label className="text-sm text-muted-foreground mr-2">HP Range:</label>
-                <select value={hpFilter} onChange={(e) => setHpFilter(e.target.value)} className="bg-card text-foreground border border-border rounded px-3 py-2 text-sm">
+                <select value={hpFilter} onChange={(e) => setHpFilter(e.target.value)} className="bg-card text-foreground border border-border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary focus:outline-none">
                   {hpRanges.map((f) => <option key={f.value} value={f.value}>{f.label}</option>)}
                 </select>
               </div>
               <div>
                 <label className="text-sm text-muted-foreground mr-2">Discharge:</label>
-                <select value={dischargeFilter} onChange={(e) => setDischargeFilter(e.target.value)} className="bg-card text-foreground border border-border rounded px-3 py-2 text-sm">
+                <select value={dischargeFilter} onChange={(e) => setDischargeFilter(e.target.value)} className="bg-card text-foreground border border-border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary focus:outline-none">
                   {dischargeRanges.map((f) => <option key={f.value} value={f.value}>{f.label}</option>)}
                 </select>
               </div>
               <div>
                 <label className="text-sm text-muted-foreground mr-2">Head:</label>
-                <select value={headFilter} onChange={(e) => setHeadFilter(e.target.value)} className="bg-card text-foreground border border-border rounded px-3 py-2 text-sm">
+                <select value={headFilter} onChange={(e) => setHeadFilter(e.target.value)} className="bg-card text-foreground border border-border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary focus:outline-none">
                   {headRanges.map((f) => <option key={f.value} value={f.value}>{f.label}</option>)}
                 </select>
               </div>

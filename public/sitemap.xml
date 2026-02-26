@@ -19,6 +19,60 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://yourdomain.com/products/submersible-pumps</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/products/dewatering-pumps</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/products/submersible-pumps/75hp-150hp-offshore-submersible-pump</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/products/submersible-pumps/90c-submersible-pump-ro-desalination</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/products/dewatering-pumps/psd-10105-10hp-dewatering-pump</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/products/dewatering-pumps/psd-7h560-7-5hp-dewatering-pump</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/products/dewatering-pumps/psd-540-548-5hp-dewatering-pump</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/products/dewatering-pumps/psd-1h515-1-5hp-dewatering-pump</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/products/dewatering-pumps/psd-320-3hp-dewatering-pump</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://yourdomain.com/services</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>

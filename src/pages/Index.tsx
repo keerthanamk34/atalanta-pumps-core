@@ -39,7 +39,7 @@ const Index = () => (
 
     {/* Product Categories Preview */}
     <section className="section-padding bg-background">
-      <div className="container mx-auto">
+      <div className="section-container">
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
@@ -48,10 +48,10 @@ const Index = () => (
             <p className="text-muted-foreground max-w-xl mx-auto">Engineered for extreme conditions and maximum reliability.</p>
           </div>
         </AnimatedSection>
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 gap-10 mb-8">
           {categoryPreview.map((c, i) => (
             <AnimatedSection key={c.title} delay={i * 0.1}>
-              <Link to={c.link} className="block bg-card border border-border rounded-lg p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300 group">
+              <Link to={c.link} className="block bg-card border border-border rounded-2xl p-8 h-full hover:border-primary/40 hover:shadow-xl transition-all duration-300 group">
                 <h3 className="font-heading text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{c.title}</h3>
                 <p className="text-muted-foreground mb-4">{c.desc}</p>
                 <span className="text-primary font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
@@ -66,7 +66,7 @@ const Index = () => (
 
     {/* Services Preview */}
     <section className="section-padding bg-secondary">
-      <div className="container mx-auto">
+      <div className="section-container">
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
@@ -74,10 +74,10 @@ const Index = () => (
             </h2>
           </div>
         </AnimatedSection>
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-10 mb-8">
           {servicePreview.map((s, i) => (
             <AnimatedSection key={s.title} delay={i * 0.1}>
-              <div className="bg-background border border-border rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+              <div className="bg-background border border-border rounded-2xl p-8 h-full text-center hover:shadow-xl transition-shadow">
                 <s.icon className="w-10 h-10 text-primary mx-auto mb-3" />
                 <h3 className="font-heading text-lg font-bold text-foreground mb-1">{s.title}</h3>
                 <p className="text-muted-foreground text-sm">{s.desc}</p>
@@ -97,7 +97,7 @@ const Index = () => (
 
     {/* Why Choose Us */}
     <section className="section-padding bg-primary">
-      <div className="container mx-auto">
+      <div className="section-container">
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading text-primary-foreground mb-4">
@@ -105,10 +105,10 @@ const Index = () => (
             </h2>
           </div>
         </AnimatedSection>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
           {whyChoose.map((item, i) => (
             <AnimatedSection key={item} delay={i * 0.06}>
-              <div className="flex items-center gap-3 bg-primary-foreground/10 rounded-lg p-4">
+              <div className="flex items-center gap-3 bg-primary-foreground/10 rounded-2xl p-8 h-full">
                 <div className="w-2 h-2 rounded-full bg-accent flex-shrink-0" />
                 <span className="text-primary-foreground font-medium text-sm">{item}</span>
               </div>
@@ -118,7 +118,7 @@ const Index = () => (
         <div className="text-center">
           <Link
             to="/contact"
-            className="bg-accent text-accent-foreground px-8 py-3.5 rounded-lg font-semibold text-lg hover:brightness-110 transition-all shadow-lg inline-block"
+            className="bg-accent text-accent-foreground px-8 py-3.5 rounded-2xl font-semibold text-lg hover:brightness-110 hover:scale-105 transition-all shadow-lg inline-block"
           >
             Request a Technical Quote
           </Link>

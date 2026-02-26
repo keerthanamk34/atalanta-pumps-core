@@ -1,6 +1,7 @@
 import PageTransition from "@/components/PageTransition";
 import SEOHead from "@/components/SEOHead";
 import ServicesSection from "@/components/ServicesSection";
+import QualitySection from "@/components/QualitySection";
 
 const Services = () => (
   <PageTransition>
@@ -11,6 +12,7 @@ const Services = () => (
     />
     <section className="pt-24">
       <ServicesSection />
+      <QualitySection />
     </section>
   </PageTransition>
 );

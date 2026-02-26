@@ -3,9 +3,9 @@ import { quickLinks } from "@/config/navigation.config";
 import { companyConfig } from "@/config/company.config";
 
 const Footer = () => (
-  <footer className="bg-primary text-primary-foreground py-12 px-4">
-    <div className="container mx-auto">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+  <footer className="bg-primary text-primary-foreground section-padding">
+    <div className="section-container">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-8">
         <div>
           <Link to="/" className="font-heading text-lg font-bold text-accent">
             ATALANTA<span className="text-primary-foreground"> PUMPS</span>

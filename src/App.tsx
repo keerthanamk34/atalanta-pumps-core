@@ -11,8 +11,6 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Services from "./pages/Services";
-import Facilities from "./pages/Facilities";
-import Quality from "./pages/Quality";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -34,8 +32,6 @@ const App = () => (
                 <Route path="/products/:category" element={<Products />} />
                 <Route path="/products/:category/:slug" element={<ProductDetail />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/facilities" element={<Facilities />} />
-                <Route path="/quality" element={<Quality />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

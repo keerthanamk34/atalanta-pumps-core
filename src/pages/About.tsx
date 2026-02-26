@@ -2,6 +2,7 @@ import PageTransition from "@/components/PageTransition";
 import SEOHead from "@/components/SEOHead";
 import CompanyOverview from "@/components/CompanyOverview";
 import IndustriesSection from "@/components/IndustriesSection";
+import ManufacturingSection from "@/components/ManufacturingSection";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Shield, Award, Globe, Users, Factory, Calendar } from "lucide-react";
 import { companyConfig } from "@/config/company.config";
@@ -22,8 +23,8 @@ const About = () => (
       description="Protecto Engineering Pvt. Ltd. — Established 1973. ISO 9001:2008 certified, ONGC empanelled submersible pump manufacturer with global exports."
       keywords="about Atalanta Pumps, Protecto Engineering, pump manufacturer India, ONGC empanelled"
     />
-    <section className="pt-24 section-padding bg-background">
-      <div className="container mx-auto">
+    <section className="pt-24 py-20 px-6 lg:px-8 bg-background">
+      <div className="max-w-7xl mx-auto">
         <AnimatedSection>
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6 text-center">
             About <span className="text-primary">Atalanta Pumps</span>
@@ -33,10 +34,10 @@ const About = () => (
             submersible and dewatering pump systems for the world's most demanding industries.
           </p>
         </AnimatedSection>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
           {aboutDetails.map((item, i) => (
             <AnimatedSection key={item.title} delay={i * 0.1}>
-              <div className="bg-card border border-border rounded-lg p-6 h-full hover:border-primary/40 hover:shadow-md transition-all duration-300">
+              <div className="bg-card border border-border rounded-2xl p-8 h-full hover:border-primary/40 hover:shadow-xl transition-all duration-300">
                 <item.icon className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-heading text-lg font-bold text-foreground mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
@@ -47,6 +48,7 @@ const About = () => (
       </div>
     </section>
     <CompanyOverview />
+    <ManufacturingSection />
     <IndustriesSection />
   </PageTransition>
 );

@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 import Services from "./pages/Services";
 import Facilities from "./pages/Facilities";
 import Quality from "./pages/Quality";
@@ -28,6 +29,8 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/products/:category" element={<Products />} />
+              <Route path="/products/:category/:slug" element={<ProductDetail />} />
               <Route path="/services" element={<Services />} />
               <Route path="/facilities" element={<Facilities />} />
               <Route path="/quality" element={<Quality />} />

@@ -1,3 +1,4 @@
+import AnimatedSection from "./AnimatedSection";
 import facilityChakan from "@/assets/facility-chakan.jpg";
 import facilityAmbethan from "@/assets/facility-ambethan.jpg";
 
@@ -16,10 +17,10 @@ const facilities = [
   },
 ];
 
-const ManufacturingSection = () => {
-  return (
-    <section id="facilities" className="section-padding bg-secondary">
-      <div className="container mx-auto">
+const ManufacturingSection = () => (
+  <section className="section-padding bg-secondary">
+    <div className="container mx-auto">
+      <AnimatedSection>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
             Manufacturing <span className="text-primary">Facilities</span>
@@ -28,9 +29,11 @@ const ManufacturingSection = () => {
             Two purpose-built facilities powering our production capabilities.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {facilities.map((f) => (
-            <div key={f.name} className="bg-card border border-border rounded overflow-hidden">
+      </AnimatedSection>
+      <div className="grid md:grid-cols-2 gap-8">
+        {facilities.map((f, i) => (
+          <AnimatedSection key={f.name} delay={i * 0.15}>
+            <div className="bg-card border border-border rounded overflow-hidden">
               <div className="h-56 overflow-hidden">
                 <img src={f.image} alt={f.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
@@ -42,11 +45,11 @@ const ManufacturingSection = () => {
                 <p className="text-muted-foreground text-sm">{f.desc}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </AnimatedSection>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default ManufacturingSection;

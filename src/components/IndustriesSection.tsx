@@ -1,4 +1,6 @@
 import { Droplets, Anchor, Mountain, Building2, Waves } from "lucide-react";
+import { motion } from "framer-motion";
+import AnimatedSection from "./AnimatedSection";
 
 const industries = [
   { icon: Droplets, name: "Oil & Gas", desc: "High-pressure submersible systems for extraction and processing" },
@@ -8,10 +10,10 @@ const industries = [
   { icon: Waves, name: "Industrial Dewatering", desc: "Efficient water removal for industrial facilities" },
 ];
 
-const IndustriesSection = () => {
-  return (
-    <section id="industries" className="section-padding bg-background">
-      <div className="container mx-auto">
+const IndustriesSection = () => (
+  <section className="section-padding bg-background">
+    <div className="container mx-auto">
+      <AnimatedSection>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
             Industries <span className="text-primary">We Serve</span>
@@ -20,21 +22,23 @@ const IndustriesSection = () => {
             Delivering engineered pump solutions across critical sectors worldwide.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {industries.map((ind) => (
-            <div
-              key={ind.name}
-              className="group bg-card border border-border rounded p-6 text-center hover:border-primary transition-all hover:-translate-y-1"
+      </AnimatedSection>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {industries.map((ind, i) => (
+          <AnimatedSection key={ind.name} delay={i * 0.08}>
+            <motion.div
+              whileHover={{ y: -6, borderColor: "hsl(24 95% 53%)" }}
+              className="group bg-card border border-border rounded p-6 text-center transition-colors"
             >
               <ind.icon className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-heading text-lg font-bold text-foreground mb-2">{ind.name}</h3>
               <p className="text-muted-foreground text-sm">{ind.desc}</p>
-            </div>
-          ))}
-        </div>
+            </motion.div>
+          </AnimatedSection>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default IndustriesSection;

@@ -1,35 +1,20 @@
-import Navbar from "@/components/Navbar";
+import PageTransition from "@/components/PageTransition";
+import SEOHead from "@/components/SEOHead";
 import HeroSection from "@/components/HeroSection";
 import CompanyOverview from "@/components/CompanyOverview";
 import IndustriesSection from "@/components/IndustriesSection";
-import ProductsSection from "@/components/ProductsSection";
-import PumpSelector from "@/components/PumpSelector";
-import ManufacturingSection from "@/components/ManufacturingSection";
-import QualitySection from "@/components/QualitySection";
-import ServicesSection from "@/components/ServicesSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <CompanyOverview />
-        <IndustriesSection />
-        <ProductsSection />
-        <PumpSelector />
-        <ManufacturingSection />
-        <QualitySection />
-        <ServicesSection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
-  );
-};
+const Index = () => (
+  <PageTransition>
+    <SEOHead
+      title="Atalanta Pumps Pvt. Ltd. | Submersible & Dewatering Pump Manufacturer Since 1973"
+      description="ISO 9001:2008 certified manufacturer of submersible and dewatering pumps. ONGC empanelled. Exports to UAE, Ethiopia, Algeria, Kenya."
+      keywords="submersible pump manufacturer, dewatering pump manufacturer, industrial pumps India, ONGC pump supplier"
+    />
+    <HeroSection />
+    <CompanyOverview />
+    <IndustriesSection />
+  </PageTransition>
+);
 
 export default Index;

@@ -1,18 +1,13 @@
 import testingLab from "@/assets/testing-lab.jpg";
 import { CheckCircle } from "lucide-react";
+import AnimatedSection from "./AnimatedSection";
 
-const tests = [
-  "Flow Testing",
-  "Head Testing",
-  "Load Testing",
-  "Service Report",
-  "Test Report",
-];
+const tests = ["Flow Testing", "Head Testing", "Load Testing", "Service Report", "Test Report"];
 
-const QualitySection = () => {
-  return (
-    <section id="quality" className="section-padding bg-background">
-      <div className="container mx-auto">
+const QualitySection = () => (
+  <section className="section-padding bg-background">
+    <div className="container mx-auto">
+      <AnimatedSection>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
             Quality & <span className="text-primary">Testing</span>
@@ -21,17 +16,19 @@ const QualitySection = () => {
             Every pump undergoes rigorous ISO 9906/2 testing before dispatch.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      </AnimatedSection>
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <AnimatedSection>
           <div className="rounded overflow-hidden">
-            <img src={testingLab} alt="Testing Lab" className="w-full h-80 object-cover rounded" loading="lazy" />
+            <img src={testingLab} alt="ISO 9906/2 Testing Laboratory" className="w-full h-80 object-cover rounded" loading="lazy" />
           </div>
+        </AnimatedSection>
+        <AnimatedSection delay={0.2}>
           <div>
-            <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
-              ISO 9906/2 Compliance
-            </h3>
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-4">ISO 9906/2 Compliance</h3>
             <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-              Our in-house testing laboratory is equipped with calibrated instruments for hydraulic 
-              performance validation. Each pump is tested against international standards to ensure 
+              Our in-house testing laboratory is equipped with calibrated instruments for hydraulic
+              performance validation. Each pump is tested against international standards to ensure
               consistent performance, efficiency, and reliability across all operating conditions.
             </p>
             <ul className="space-y-3">
@@ -43,10 +40,10 @@ const QualitySection = () => {
               ))}
             </ul>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default QualitySection;

@@ -6,7 +6,7 @@ const tests = ["Flow Testing", "Head Testing", "Load Testing", "Service Report",
 
 const QualitySection = () => (
   <section className="section-padding bg-background">
-    <div className="container mx-auto">
+    <div className="section-container">
       <AnimatedSection>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
@@ -17,9 +17,9 @@ const QualitySection = () => (
           </p>
         </div>
       </AnimatedSection>
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-10 items-center">
         <AnimatedSection>
-          <div className="rounded-lg overflow-hidden shadow-lg">
+          <div className="rounded-2xl overflow-hidden shadow-lg">
             <img src={testingLab} alt="ISO 9906/2 Testing Laboratory" className="w-full h-80 object-cover" loading="lazy" />
           </div>
         </AnimatedSection>

@@ -4,7 +4,7 @@ import { services, brandsServiced, servicingStages } from "@/data/services.data"
 
 const ServicesSection = () => (
   <section className="section-padding bg-secondary">
-    <div className="container mx-auto">
+    <div className="section-container">
       <AnimatedSection>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
@@ -16,12 +16,12 @@ const ServicesSection = () => (
         </div>
       </AnimatedSection>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
         {services.map((s, i) => (
           <AnimatedSection key={s.title} delay={i * 0.1}>
             <motion.div
               whileHover={{ y: -4 }}
-              className="bg-background border border-border rounded-lg p-6 hover:border-primary/40 hover:shadow-md transition-all duration-300"
+              className="bg-background border border-border rounded-2xl p-8 h-full hover:border-primary/40 hover:shadow-xl transition-all duration-300"
             >
               <s.icon className="w-10 h-10 text-primary mb-4" />
               <h3 className="font-heading text-lg font-bold text-foreground mb-2">{s.title}</h3>
@@ -33,11 +33,11 @@ const ServicesSection = () => (
 
       {/* Brands Serviced */}
       <AnimatedSection delay={0.2}>
-        <div className="bg-background border border-border rounded-lg p-8 text-center mb-16">
+        <div className="bg-background border border-border rounded-2xl p-8 text-center mb-16">
           <h3 className="font-heading text-xl font-bold text-foreground mb-4">Brands We Service</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {brandsServiced.map((b) => (
-              <span key={b} className="bg-secondary text-foreground px-4 py-2 rounded-lg text-sm font-medium border border-border">{b}</span>
+              <span key={b} className="bg-secondary text-foreground px-4 py-2 rounded-2xl text-sm font-medium border border-border">{b}</span>
             ))}
           </div>
         </div>
@@ -56,12 +56,12 @@ const ServicesSection = () => (
             <AnimatedSection key={stage.step} delay={i * 0.08}>
               <div className={`relative flex items-start gap-6 mb-8 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                 <div className={`hidden md:block md:w-1/2 ${i % 2 === 0 ? "text-right pr-10" : "text-left pl-10"}`}>
-                  <div className="bg-background border border-border rounded-lg p-5 inline-block hover:shadow-md transition-shadow">
+                  <div className="bg-background border border-border rounded-2xl p-8 inline-block hover:shadow-xl transition-shadow">
                     <h4 className="font-heading text-lg font-bold text-foreground mb-1">{stage.title}</h4>
                     <p className="text-muted-foreground text-sm">{stage.desc}</p>
                   </div>
                 </div>
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold z-10 shadow-md">
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold z-10 shadow-lg">
                   {stage.step}
                 </div>
                 <div className="md:hidden ml-12">

@@ -49,7 +49,7 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
 
 const CompanyOverview = () => (
   <section className="section-padding bg-secondary">
-    <div className="container mx-auto">
+    <div className="section-container">
       <AnimatedSection>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-4">
@@ -62,7 +62,7 @@ const CompanyOverview = () => (
         </div>
       </AnimatedSection>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
         {companyConfig.stats.map((s) => (
           <div key={s.label} className="text-center">
             <AnimatedCounter target={s.value} suffix={s.suffix} />
@@ -71,10 +71,10 @@ const CompanyOverview = () => (
         ))}
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {highlights.map((h, i) => (
           <AnimatedSection key={h.title} delay={i * 0.1}>
-            <div className="bg-background p-6 rounded-lg border border-border hover:border-primary/40 hover:shadow-md transition-all duration-300">
+            <div className="bg-background p-8 rounded-2xl border border-border h-full hover:border-primary/40 hover:shadow-xl transition-all duration-300">
               <h.icon className="w-10 h-10 text-primary mb-4" />
               <h3 className="font-heading text-lg font-bold text-foreground mb-1">{h.title}</h3>
               <p className="text-muted-foreground text-sm">{h.desc}</p>
